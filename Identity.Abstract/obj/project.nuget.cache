@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "RKB9N8BX5EhxY4aGaEfY3qV4Zt4HMYuKw+9XrdVLtl9HJ3raoFj2c3/xKjyJVn8QX8jPvQ1mBgn4CcGaidU0kg==",
+  "success": true,
+  "projectFilePath": "D:\\projects\\Identity\\Identity.Abstract\\Identity.Abstract.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nhdang\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\nhdang\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.0\\microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",
+    "C:\\Users\\nhdang\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\nhdang\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\nhdang\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\8.0.0\\microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
+    "C:\\Users\\nhdang\\.nuget\\packages\\microsoft.extensions.options.dataannotations\\8.0.0\\microsoft.extensions.options.dataannotations.8.0.0.nupkg.sha512",
+    "C:\\Users\\nhdang\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\nhdang\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

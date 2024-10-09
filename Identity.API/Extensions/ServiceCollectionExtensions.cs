@@ -62,9 +62,7 @@ namespace Identity.API.Extensions
 
             #endregion
 
-            #region Twilio sms provider
 
-            #endregion
 
             string? connectionString = configuration.GetConnectionString("Identity");
             if (string.IsNullOrWhiteSpace(connectionString))
@@ -80,7 +78,8 @@ namespace Identity.API.Extensions
                 .AddMemoryCache()
                 .AddTransient<IIdentityCacheService, IdentityCacheService>()
                 .AddTransient<IIdentityService, SelfIdentityService>()
-                .AddTransient<IRefreshTokenService, RefreshTokenService>();
+                .AddTransient<IRefreshTokenService, RefreshTokenService>()
+                .AddTransient<IOTPService, SmsGlobalOtpService>();
         }
         public static void Configure(this WebApplication app)
         {

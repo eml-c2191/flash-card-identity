@@ -14,9 +14,9 @@ namespace Identity.Abstract.Requests
         /// </summary>
         [Required(AllowEmptyStrings = false)]
         [DataType(DataType.PhoneNumber, ErrorMessage = "Phone Number Required!")]
-        [RegularExpression("^\\+84\\d{9,11}$",
+        [RegularExpression("^\\+61\\d{9,11}$",
                    ErrorMessage = "Entered phone format is not valid.")]
-        [MaxLength(11)]
+        [MaxLength(15)]
         [MinLength(10)]
         public string MobileNo { get; set; } = string.Empty;
     }

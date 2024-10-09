@@ -128,7 +128,7 @@ namespace Identity.API.Services
                 return phoneNumber[1..];
 
             if (phoneNumber.StartsWith('0'))
-                return string.Concat("84", phoneNumber.AsSpan(1));
+                return string.Concat("61", phoneNumber.AsSpan(1));
 
             return phoneNumber;
         }

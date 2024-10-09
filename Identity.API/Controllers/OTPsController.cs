@@ -1,6 +1,5 @@
 ﻿using Identity.Abstract.Exceptions;
 using Identity.Abstract.Requests;
-using Identity.Abstract.Responses;
 using Identity.API.Models.Requests;
 using Identity.API.Services.Abstractions;
 using Microsoft.AspNetCore.Authorization;

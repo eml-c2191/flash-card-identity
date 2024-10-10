@@ -93,7 +93,7 @@ namespace Identity.API.Services
         private static SecurityKey CreateKey()
         {
             string path = Directory.GetCurrentDirectory();
-            string privateKeyFilePath = Path.Combine(path, "App_Data\\key\\private.key");
+            string privateKeyFilePath = Path.Combine(path, "App_Data\\key\\PrivateSigning.key");
             RSA privateRsa = RSAHelper.PrivateKeyFromPemFile(privateKeyFilePath);
             RsaSecurityKey privateSigningKey = new RsaSecurityKey(privateRsa) { KeyId = "EML.FLC" };
 

@@ -71,7 +71,6 @@ modules/.vscode
 
 # Don't check in secret files
 *secret.js
-**/App_Data
 
 # Ignore npm/yarn debug log
 npm-debug.log

@@ -1,6 +1,8 @@
-﻿using Identity.API.Models.Options;
+﻿using Identity.Abstract;
+using Identity.API.Models.Options;
 using Identity.API.Services.Abstractions;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -20,13 +22,16 @@ namespace Identity.API.Services
         public async Task<(string accessToken, string refreshToken)> IssueTokenAsync(IEnumerable<KeyValuePair<string, string>> payload, string? oldRefreshToken)
         {
             //TODO: implement rsaSecurityKey and signingCredentials for jwt token
+            SecurityKey rsaSecurityKey = CreateKey();
+            SigningCredentials credentials = new(rsaSecurityKey, SecurityAlgorithms.RsaSha256);
             string accessToken = new JwtSecurityTokenHandler()
                 .WriteToken(new JwtSecurityToken
                 (
                     _options.Issuer,
                    _options.Audience,
                     payload?.Select(i => new Claim(i.Key, i.Value)),
-                    expires: DateTime.UtcNow.AddHours(_options.AccessTokenExpiredInHour)
+                    expires: DateTime.UtcNow.AddHours(_options.AccessTokenExpiredInHour),
+                    signingCredentials: credentials
             ));
 
             string refreshToken = await IssueRefreshTokenAsync(payload, oldRefreshToken);
@@ -84,6 +89,15 @@ namespace Identity.API.Services
                 sb.Append(b.ToString("X2"));
 
             return sb.ToString();
+        }
+        private static SecurityKey CreateKey()
+        {
+            string path = Directory.GetCurrentDirectory();
+            string privateKeyFilePath = Path.Combine(path, "App_Data\\key\\private.key");
+            RSA privateRsa = RSAHelper.PrivateKeyFromPemFile(privateKeyFilePath);
+            RsaSecurityKey privateSigningKey = new RsaSecurityKey(privateRsa) { KeyId = "EML.FLC" };
+
+            return privateSigningKey;
         }
     }
 }

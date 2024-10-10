@@ -9,6 +9,7 @@ Flash Card Identity API Technology:
 	
 	In case access token expired we can use refresh token to regrant new access token .
 
+Note : for mobile number. please use Australian mobile to get otp code
 
 Set up instructions:
 
